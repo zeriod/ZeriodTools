@@ -19,10 +19,7 @@ def iplocator():
 	print("***************************Bienvenue sur Tracer Une IP********************************")
 	print("**************************************************************************************")
 	ip = input("\n\nMettez l'adress IP que vous souhaitez localisé : ")
-	masked=(curl -s ipinfo.io/"$1" | sed 's/"//g' | awk 'NR>2 {print last} {last=$0}')
-	if ! [[ -z $masked ]]; then
-        echo -e "${success}URL ${3} > ${masked}\n"
-        short=${masked#https://}
-        echo -e "${success}URL ${4} > $mwebsite@${short}\n"
+	git_ver=`(curl -s ipinfo.io/"$1" | sed 's/"//g' | awk 'NR>2 {print last} {last=$0}')
+	
 if __name__ == "__main__":
 	main()
