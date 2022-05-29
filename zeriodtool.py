@@ -12,13 +12,13 @@ print("""
 
 
 def main():
-	n = input("1- Tracer une IP \n2- Envoyer un sms Anonyme\n3- Numéro relié (amazon, instagram, snapshat,)\n4-Recherche de pseudonyme a travers les sites\n\nMettez le numéro de ce que vous voulez faire : ")
+	n = input("1- Tracer une IP \n2- Envoyer un sms Anonyme\n3- Numéro relié (amazon, instagram, snapshat,)\n4- Recherche de pseudonyme a travers les sites\n\nMettez le numéro de ce que vous voulez faire : ")
 	if n == '1':
 		iplocator()
 def iplocator():
 	print("***************************Bienvenue sur Tracer Une IP********************************")
 	print("**************************************************************************************")
 	ip = input("\n\nMettez l'adress IP que vous souhaitez localisé : ")
-
+	os.system(curl -s ipinfo.io/"$1" | sed 's/"//g' | awk 'NR>2 {print last} {last=$0}')
 if __name__ == "__main__":
 	main()
