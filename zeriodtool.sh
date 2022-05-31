@@ -47,8 +47,8 @@ myipaddr() {
 
 myipaddripapico=$(curl -s "https://www.ip-tracker.org" -L)
 myipaddripapicom=$(curl -s "https://www.ip-tracker.org" -L)
-myip=$(echo $myipaddripapico | grep -Po '(?<="Your IP":)[^,]*' | tr -d '[]"')
-mycity=$(echo $myipaddripapico | grep -Po '(?<="City":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+myip=$(echo $td.tracking | grep -Po '(?<="Your IP":)[^,]*' | tr -d '[]"')
+mycity=$(echo $td.vazno | grep -Po '(?<="City":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 myregion=$(echo $myipaddripapico | grep -Po '(?<="Region":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 mycountry=$(echo $myipaddripapico | grep -Po '(?<="Country":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 mylat=$(echo $myipaddripapicom | grep -Po '(?<="lat":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
