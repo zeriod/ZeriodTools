@@ -45,8 +45,8 @@ fi
 }
 myipaddr() {
 
-myipaddripapico=$(curl -s "https://ipapi.co//json" -L)
-myipaddripapicom=$(curl -s "http://ip-api.com/json/" -L)
+myipaddripapico=$(curl -s "https://www.ip-tracker.org" -L)
+myipaddripapicom=$(curl -s "https://www.ip-tracker.org" -L)
 myip=$(echo $myipaddripapico | grep -Po '(?<="ip":)[^,]*' | tr -d '[]"')
 mycity=$(echo $myipaddripapico | grep -Po '(?<="city":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 myregion=$(echo $myipaddripapico | grep -Po '(?<="region":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
@@ -116,8 +116,8 @@ printf "\e[0m\n"
 printf "\e[0m\n"
 read -p $'  \e[1;31m[\e[0m\e[1;37m~\e[0m\e[1;31m]\e[0m\e[1;92m Input IP Address \e[0m\e[1;96m: \e[0m\e[1;93m\en' useripaddress
 
-ipaddripapico=$(curl -s "https://ipapi.co/$useripaddress/json" -L)
-ipaddripapicom=$(curl -s "http://ip-api.com/json/$useripaddress" -L)
+ipaddripapico=$(curl -s "https://www.ip-tracker.org/lookup.php?ip=$useripaddress/" -L)
+ipaddripapicom=$(curl -s "https://www.ip-tracker.org/lookup.php?ip=$useripaddress" -L)
 userip=$(echo $ipaddripapico | grep -Po '(?<="ip":)[^,]*' | tr -d '[]"')
 usercity=$(echo $ipaddripapico | grep -Po '(?<="city":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 useregion=$(echo $ipaddripapico | grep -Po '(?<="region":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
