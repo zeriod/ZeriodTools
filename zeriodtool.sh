@@ -47,7 +47,7 @@ myipaddr() {
 
 myipaddripapico=$(curl -s "https://www.ip-tracker.org" -L)
 myipaddripapicom=$(curl -s "https://www.ip-tracker.org" -L)
-myip=$(echo $myipaddripapico | grep -Po '(?<="ip":)[^,]*' | tr -d '[]"')
+myip=$(echo $myipaddripapico | grep -Po '(?<="tracking":)[^,]*' | tr -d '[]"')
 mycity=$(echo $myipaddripapico | grep -Po '(?<="city":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 myregion=$(echo $myipaddripapico | grep -Po '(?<="region":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 mycountry=$(echo $myipaddripapico | grep -Po '(?<="country_name":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
